@@ -1,0 +1,18 @@
+==================================================
+ 📊 INFORME TÉCNICO DE REFRIGERACIÓN - TECNI HOME
+==================================================
+Fecha/Hora: 03/06/2026 19:51:28
+Cliente:    PEDRO
+Equipo:     Ares | Gas: R290
+--------------------------------------------------
+Presión Alta: 500.0 PSI  | Presión Baja: 90.0 PSI
+Temp. Salida Evap: 45.0 °C
+Temp. Salida Cond: 60.0 °C
+--------------------------------------------------
+Recalentamiento (SH): 0.0 °C
+Subenfriamiento (SC): 0.0 °C
+Consumo Real: 10.0 A (Límite Placa: 0.0 A)
+--------------------------------------------------
+📋 RESULTADO DEL DIAGNÓSTICO:
+ALERTA: Recalentamiento alto (Falta gas)
+==================================================

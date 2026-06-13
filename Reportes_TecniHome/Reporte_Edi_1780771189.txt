@@ -1,0 +1,21 @@
+==================================================
+ 📊 INFORME TÉCNICO DE REFRIGERACIÓN - TECNI HOME
+==================================================
+Fecha/Hora: 06/06/2026 14:15:28
+Cliente:    EDI
+Equipo:     Cava | Gas: R22
+Expansión:  TXV | Rango: MEDIA
+--------------------------------------------------
+Presión Alta: 200.0 PSI | Presión Baja: 35.0 PSI
+Temp. Retorno Aire: 1.0 °C
+Temp. Salida Evap: 4.0 °C
+Temp. Salida Cond: 45.0 °C
+--------------------------------------------------
+Recalentamiento (SH): 15.0 °C -> ALTO (Falta líquido o restricción) - Límite: 7.0°C
+Subenfriamiento (SC): -6.4 °C -> BAJO (Falta de gas)
+Delta T (ΔT) Evap: 12.0 °C -> ALTO (Poco flujo / Falta gas) - Límite: 11.0°C
+Consumo Real: 10.0 A (Límite Placa: 0.0 A)
+--------------------------------------------------
+📋 RESULTADO DEL DIAGNÓSTICO:
+⚠️ REQUIERE ATENCIÓN TÉCNICA (Revisar parámetros)
+==================================================

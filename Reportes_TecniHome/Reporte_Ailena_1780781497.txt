@@ -1,0 +1,21 @@
+==================================================
+ 📊 INFORME TÉCNICO DE REFRIGERACIÓN - TECNI HOME
+==================================================
+Fecha/Hora: 05/06/2026 19:13:56
+Cliente:    AILENA
+Equipo:      | Gas: R22
+Expansión:   | Rango: 
+--------------------------------------------------
+Presión Alta: 250.0 PSI | Presión Baja: 60.0 PSI
+Temp. Retorno Aire: 0.0 °C
+Temp. Salida Evap: 4.0 °C
+Temp. Salida Cond: 45.0 °C
+--------------------------------------------------
+Recalentamiento (SH): 3.0 °C -> BAJO (Riesgo de retorno de líquido) - Límite: 5.0°C
+Subenfriamiento (SC): 2.3 °C -> BAJO (Falta de gas)
+Delta T (ΔT) Evap: -1.0 °C -> SIN DATOS DE AIRE
+Consumo Real: 20.0 A (Límite Placa: 0.0 A)
+--------------------------------------------------
+📋 RESULTADO DEL DIAGNÓSTICO:
+⚠️ REQUIERE ATENCIÓN TÉCNICA (Revisar parámetros)
+==================================================

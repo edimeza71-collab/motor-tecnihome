@@ -1,0 +1,21 @@
+==================================================
+ 📊 INFORME TÉCNICO DE REFRIGERACIÓN - TECNI HOME
+==================================================
+Fecha/Hora: 05/06/2026 14:22:39
+Cliente:    AIRE CUARTO MAMA JISE
+Equipo:     5 ton gabinete | Gas: R22
+Expansión:   | Rango: 
+--------------------------------------------------
+Presión Alta: 225.0 PSI | Presión Baja: 47.0 PSI
+Temp. Retorno Aire: 0.0 °C
+Temp. Salida Evap: 34.0 °C
+Temp. Salida Cond: 34.0 °C
+--------------------------------------------------
+Recalentamiento (SH): 38.7 °C -> ALTO (Falta líquido o restricción) - Límite: 12.0°C
+Subenfriamiento (SC): 9.1 °C -> ÓPTIMO
+Delta T (ΔT) Evap: 4.7 °C -> SIN DATOS DE AIRE
+Consumo Real: 0.0 A (Límite Placa: 0.0 A)
+--------------------------------------------------
+📋 RESULTADO DEL DIAGNÓSTICO:
+⚠️ REQUIERE ATENCIÓN TÉCNICA (Revisar parámetros)
+==================================================

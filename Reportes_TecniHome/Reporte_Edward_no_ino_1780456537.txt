@@ -1,0 +1,18 @@
+==================================================
+ 📊 INFORME TÉCNICO DE REFRIGERACIÓN - TECNI HOME
+==================================================
+Fecha/Hora: 02/06/2026
+Cliente:    EDWARD NO INO
+Equipo:     Cava cuarto a | Gas: R22
+--------------------------------------------------
+Presión Alta: 322.0 PSI  | Presión Baja: 35.0 PSI
+Temp. Salida Evap: -13.0 °C
+Temp. Salida Cond: 43.1 °C
+--------------------------------------------------
+Recalentamiento (SH): -2.0 °C
+Subenfriamiento (SC): 14.8 °C
+Consumo Real: 20.0 A (Límite Placa: 0.0 A)
+--------------------------------------------------
+📋 RESULTADO DEL DIAGNÓSTICO:
+ALERTA: Posible retorno de líquido (SH bajo)
+==================================================

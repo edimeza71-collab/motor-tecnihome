@@ -1,0 +1,18 @@
+==================================================
+ 📊 INFORME TÉCNICO DE REFRIGERACIÓN - TECNI HOME
+==================================================
+Fecha/Hora: 04/06/2026 19:35:51
+Cliente:    PEDRO JOSE
+Equipo:      | Gas: R22
+--------------------------------------------------
+Presión Alta: 400.0 PSI  | Presión Baja: 80.0 PSI
+Temp. Salida Evap: 10.0 °C
+Temp. Salida Cond: 60.0 °C
+--------------------------------------------------
+Recalentamiento (SH): 1.4 °C
+Subenfriamiento (SC): 7.7 °C
+Consumo Real: 0.0 A (Límite Placa: 0.0 A)
+--------------------------------------------------
+📋 RESULTADO DEL DIAGNÓSTICO:
+SISTEMA ESTABLE
+==================================================

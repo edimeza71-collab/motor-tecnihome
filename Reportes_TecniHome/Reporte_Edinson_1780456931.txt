@@ -1,0 +1,18 @@
+==================================================
+ 📊 INFORME TÉCNICO DE REFRIGERACIÓN - TECNI HOME
+==================================================
+Fecha/Hora: 03/06/2026
+Cliente:    EDINSON
+Equipo:     Aire | Gas: R410A
+--------------------------------------------------
+Presión Alta: 250.0 PSI  | Presión Baja: 65.0 PSI
+Temp. Salida Evap: 4.0 °C
+Temp. Salida Cond: 45.0 °C
+--------------------------------------------------
+Recalentamiento (SH): 15.2 °C
+Subenfriamiento (SC): -16.3 °C
+Consumo Real: 20.0 A (Límite Placa: 30.0 A)
+--------------------------------------------------
+📋 RESULTADO DEL DIAGNÓSTICO:
+ALERTA: Recalentamiento alto (Falta gas)
+==================================================
