@@ -32,6 +32,10 @@ def consultar_google(instrucciones):
 # Esto evita que Render apague el programa por falta de puerto
 # =========================================================
 class ServidorFantasma(BaseHTTPRequestHandler):
+
+    def do_HEAD(self):
+        self.send_response(200)
+        self.end_headers()
     def do_GET(self):
         self.send_response(200)
         self.send_header("Content-type", "text/plain; charset=utf-8")
@@ -199,10 +203,11 @@ while True:
                 except Exception as e:
                     print(f"⚠️ Error con la IA: {e}")
                     print("Aplicando Plan B matemático...")
-                    texto_nube = f"⚡ REPORTE TÉCNICO BÁSICO - TECNI HOME ⚡\n{datos_crudos}"
+                    # 👇 ESTA ES LA LÍNEA NUEVA QUE VA A MANDAR EL ERROR AL EXCEL 👇
+                    texto_nube = f"⚡ FALLA IA: {e} \n\n{datos_crudos}"
 
                 try:
-                    payload = {"id": fecha_hora, "diagnostico": texto_nube, "tipo": "termodinamica"}
+                    payload = {"id": fecha_hora, "cliente": cliente, "diagnostico": texto_nube, "tipo": "termodinamica"}
                     req = urllib.request.Request(URL_ESCRITURA, data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'})
                     urllib.request.urlopen(req)
                     print("✅ Resultados termodinámicos inyectados con éxito.")
