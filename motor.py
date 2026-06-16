@@ -266,13 +266,7 @@ while True:
                 print("✅ Diagnóstico eléctrico enviado.")
         # === FIN DEL CEREBRO ELÉCTRICO ===
 
-                
-                resultado = evaluar_electrico(a_num(datos_elec[2]), a_num(datos_elec[3]), a_num(datos_elec[4]), a_num(datos_elec[5]), a_num(datos_elec[6]), a_num(datos_elec[11]), a_num(datos_elec[7]), a_num(datos_elec[8]), a_num(datos_elec[9]))
-                
-                payload_elec = {"id": datos_elec[0], "diagnostico": resultado, "tipo": "electrica"}
-                req_e = urllib.request.Request(URL_ESCRITURA, data=json.dumps(payload_elec).encode('utf-8'), headers={'Content-Type': 'application/json'})
-                urllib.request.urlopen(req_e)
-                print("✅ Diagnóstico eléctrico enviado.")
+              
     except Exception as e:
         print(f"❌ ERROR ELÉCTRICO: {e}")
 
