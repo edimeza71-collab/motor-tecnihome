@@ -265,6 +265,6 @@ while True:
                 urllib.request.urlopen(req_e)
                 print("✅ Diagnóstico eléctrico enviado.")
     except Exception as e:
-        pass
+        print(f"❌ ERROR ELÉCTRICO: {e}")
 
     time.sleep(5)
