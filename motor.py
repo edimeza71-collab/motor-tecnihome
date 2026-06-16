@@ -188,12 +188,18 @@ while True:
 
                 # --- 2. Le damos la instrucción al Ingeniero IA ---
                 instruccion_ia = f"""
-                Actúa como ingeniero jefe de TECNI HOME.
-                Analiza los siguientes datos termodinámicos de un equipo de refrigeración:
-                {datos_crudos}
-                Redacta un diagnóstico técnico profesional, breve y directo para el cliente.
-                Explica qué significa el estado del SH y SC actual, e incluye una recomendación de mantenimiento o reparación si es necesario.
-                """
+    Actúa como técnico experto en refrigeración industrial y climatización. 
+    Analiza el siguiente reporte de campo con datos termodinámicos:
+    {datos_crudos}
+
+    Tu informe debe ser una bitácora técnica de uso interno para TECNI HOME, estructurada así:
+    1. DIAGNÓSTICO DE FALLA: (Identificación técnica y precisa de la causa raíz de la falla).
+    2. ANÁLISIS DE EFICIENCIA: (Interpretación del sobrecalentamiento, subenfriamiento, presiones y consumos).
+    3. SOLUCIÓN TÉCNICA DIRECTA: (Pasos exactos de taller a seguir para corregir el problema).
+    4. ALERTA DE RIESGO: (Aviso claro si el compresor u otro componente está en peligro inminente según las temperaturas y el RLA).
+
+    IMPORTANTE: Usa lenguaje estrictamente de ingeniería de campo, de colega a colega. NO redactes mensajes para el cliente. Sé directo, analítico y sin rodeos.
+    """
 
                 # --- 3. Conexión directa a Google ---
                 print("🧠 Consultando análisis termodinámico a la IA...")
@@ -237,7 +243,7 @@ while True:
                 
                 1. CONTACTOR:
                 - Caída de tensión medida: {datos_elec[6]} V
-                - Si la caída > 2V, marca ALERTA DE FOGUEO.
+                - Si la caída > 2V, marca ALERTA DE DANO.
                 
                 2. CAPACITOR (Prueba dinámica):
                 - V en bornes: {datos_elec[8]} V | Amperaje de arranque: {datos_elec[9]} A
