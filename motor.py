@@ -220,6 +220,7 @@ while True:
     # ====================================================
     # ⚡ BLOQUE 2: VIGILANCIA ELÉCTRICA
     # ====================================================
+    
     try:
         resp_elec = urllib.request.urlopen(URL_LECTURA_ELEC)
         lector_elec = list(csv.reader([l.decode('utf-8') for l in resp_elec.readlines()]))
@@ -230,6 +231,32 @@ while True:
             if datos_elec[0] != ultima_revision_elec:
                 ultima_revision_elec = datos_elec[0]
                 print(f"\n⚡ PROCESANDO ELÉCTRICA ID: {datos_elec[0]}")
+                        # === INICIO DEL CEREBRO ELÉCTRICO CON IA ===
+                prompt_electrico = f"""
+                Eres un técnico especialista en refrigeración. Analiza este diagnóstico eléctrico de campo:
+                
+                1. CONTACTOR:
+                - Caída de tensión medida: {datos_elec[6]} V
+                - Si la caída > 2V, marca ALERTA DE FOGUEO.
+                
+                2. CAPACITOR (Prueba dinámica):
+                - V en bornes: {datos_elec[8]} V | Amperaje de arranque: {datos_elec[9]} A
+                - C nominal (Placa): {datos_elec[7]} µF
+                - REGLA: Calcula la corriente esperada usando la constante 2470: I_esperada = (V * C) / 2470.
+                - Compara I_esperada vs Amperaje real para diagnosticar degradación.
+                
+                3. BOBINADOS y AISLAMIENTO:
+                - Medidas: Común-Marcha(CR)={datos_elec[2]}Ω, Común-Arranque(CS)={datos_elec[3]}Ω, Marcha-Arranque(RS)={datos_elec[4]}Ω
+                - Megohmios: {datos_elec[5]} MΩ
+                - INSTRUCCIÓN: Valida si la suma CR + CS es consistente con RS. Evalúa si el aislamiento es seguro o hay riesgo de irse a tierra.
+
+                Dame un veredicto final: ¿El sistema eléctrico está operativo, requiere mantenimiento o cambio urgente de pieza?
+                """
+                
+                # Le mandamos el mensaje a Gemini y guardamos su respuesta
+                resultado = consultar_google(prompt_electrico)
+        # === FIN DEL CEREBRO ELÉCTRICO ===
+
                 
                 resultado = evaluar_electrico(a_num(datos_elec[2]), a_num(datos_elec[3]), a_num(datos_elec[4]), a_num(datos_elec[5]), a_num(datos_elec[6]), a_num(datos_elec[11]), a_num(datos_elec[7]), a_num(datos_elec[8]), a_num(datos_elec[9]))
                 
