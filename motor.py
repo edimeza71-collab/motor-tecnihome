@@ -55,7 +55,7 @@ threading.Thread(target=arrancar_puerto, daemon=True).start()
 ID_HOJA = "1XKKxJkbcTIpSK5t9gLYfKOR7R14AAdNkW-QqeWzGMBE"
 URL_LECTURA = f"https://docs.google.com/spreadsheets/d/{ID_HOJA}/export?format=csv&gid=0"
 URL_LECTURA_ELEC = f"https://docs.google.com/spreadsheets/d/{ID_HOJA}/export?format=csv&gid=688032349"
-URL_ESCRITURA = "https://script.google.com/macros/s/AKfycbyfajYVL0f3Wzbqd-UJtnVUlbVagC60HNLF135VXdI0akthrgZXd2BnJ8S-_5JUqraC/exec"
+URL_ESCRITURA = "https://script.google.com/macros/s/AKfycbx3lblmeU3FJzU93QW1RQdYE9T-V2YQfOUmBKF9WS76MicT5jioJXPkQumUDWCZXXNL/exec"
 
 os.makedirs("Reportes_TecniHome", exist_ok=True)
 
@@ -254,7 +254,16 @@ while True:
                 """
                 
                 # Le mandamos el mensaje a Gemini y guardamos su respuesta
+                print("🧠 Tocando la puerta de Gemini...")
                 resultado = consultar_google(prompt_electrico)
+                print("✅ Gemini respondió.")
+                
+                payload_elec = {"id": datos_elec[0], "diagnostico": resultado, "tipo": "electrica"}
+                
+                print("🚀 Tocando la puerta del Excel...")
+                req_e = urllib.request.Request(URL_ESCRITURA, data=json.dumps(payload_elec).encode('utf-8'), headers={'Content-Type': 'application/json'})
+                urllib.request.urlopen(req_e, timeout=15) # Le damos 15 segundos máximo
+                print("✅ Diagnóstico eléctrico enviado.")
         # === FIN DEL CEREBRO ELÉCTRICO ===
 
                 
