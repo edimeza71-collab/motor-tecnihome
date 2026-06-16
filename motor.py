@@ -188,18 +188,18 @@ while True:
 
                 # --- 2. Le damos la instrucción al Ingeniero IA ---
                 instruccion_ia = f"""
-    Actúa como técnico experto en refrigeración industrial y climatización. 
-    Analiza el siguiente reporte de campo con datos termodinámicos:
-    {datos_crudos}
+        Actúa como técnico experto en refrigeración industrial y climatización. 
+        Analiza el siguiente reporte de campo con datos termodinámicos:
+        {datos_crudos}
 
-    Tu informe debe ser una bitácora técnica de uso interno para TECNI HOME, estructurada así:
-    1. DIAGNÓSTICO DE FALLA: (Identificación técnica y precisa de la causa raíz de la falla).
-    2. ANÁLISIS DE EFICIENCIA: (Interpretación del sobrecalentamiento, subenfriamiento, presiones y consumos).
-    3. SOLUCIÓN TÉCNICA DIRECTA: (Pasos exactos de taller a seguir para corregir el problema).
-    4. ALERTA DE RIESGO: (Aviso claro si el compresor u otro componente está en peligro inminente según las temperaturas y el RLA).
+        Tu informe debe ser una bitácora técnica de uso interno para TECNI HOME, estructurada así:
+        1. DIAGNÓSTICO DE FALLA: (Identificación técnica y precisa de la causa raíz de la falla).
+        2. ANÁLISIS DE EFICIENCIA: (Interpretación del sobrecalentamiento, subenfriamiento, presiones y consumos).
+        3. SOLUCIÓN TÉCNICA DIRECTA: (Pasos exactos de taller a seguir para corregir el problema).
+        4. ALERTA DE RIESGO: (Aviso claro si el compresor u otro componente está en peligro inminente según las temperaturas y el RLA).
 
-    IMPORTANTE: Usa lenguaje estrictamente de ingeniería de campo, de colega a colega. NO redactes mensajes para el cliente. Sé directo, analítico y sin rodeos.
-    """
+        IMPORTANTE Y REGLA DE ORO: Si el sistema usa un gas refrigerante del cual no tienes la tabla exacta (como mezclas R417A, sustitutos, etc.), ESTÁ ESTRICTAMENTE PROHIBIDO negarte a dar el diagnóstico. En esos casos, básate en los diferenciales de temperatura (Delta T), los consumos eléctricos y los principios universales de la termodinámica para dar tu veredicto. Usa lenguaje estrictamente de ingeniería de campo, de colega a colega. NO redactes mensajes para el cliente. Sé directo, analítico y sin rodeos.
+        """
 
                 # --- 3. Conexión directa a Google ---
                 print("🧠 Consultando análisis termodinámico a la IA...")
