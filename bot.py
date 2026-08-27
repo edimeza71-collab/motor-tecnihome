@@ -17,7 +17,7 @@ TOKEN_TELEGRAM = "8843800483:AAGoPL0wOhD89EBurdoHEg07Paa8-6DUw48"
 CLAVE_GEMINI = "AIzaSyAb8RN6LpC6d_ZPN2H6qB--BDCUMPaf84Pdli6Y0oF1mwtGOBvg"
 
 genai.configure(api_key=CLAVE_GEMINI)
-modelo_ia = genai.GenerativeModel('gemini-3.7-flash') 
+modelo_ia = genai.GenerativeModel('gemini-1.5-flash') 
 
 temp_data = {}
 
@@ -67,18 +67,17 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         prompt = """
         Lee esta etiqueta de refrigeración. Identifica el tipo de equipo (ej. Nevera, Congelador, Lavadora, Aire Acondicionado), la Marca, el Modelo y el Serial. 
-        Devuelve ÚNICAMENTE una sola línea de texto con este formato exacto, asegurándote de que el modelo esté en letras MAYÚSCULAS:
+        Devuelve ÚNICAMENTE una sola línea de texto con este formato exacto:
         [Equipo] [Marca] modelo [MODELO] serial [Serial]
         
+        OJO: El modelo puede contener letras, o ser EXCLUSIVAMENTE PURO NÚMERO. Si son puros números, extráelo tal cual, no lo ignores.
+        
         Ejemplo estricto:
-        Nevera LG modelo GS73T65CEF serial 123456789
+        Nevera LG modelo 145890 serial 123456789
         
         No agregues saludos, ni asteriscos, ni negritas, ni saltos de línea. Solo la línea solicitada.
         """
         
-        # ==========================================
-        # 🔄 BUCLE DE REINTENTOS PARA LA IA
-        # ==========================================
         intentos = 3
         respuesta_ia = None
         
@@ -101,15 +100,21 @@ async def handle_button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         texto_extraido = respuesta_ia.text.strip()
         mensaje_final = f"{texto_extraido} {estatus_seleccionado}"
         
+        # Mandar la foto sola
         await context.bot.send_photo(
             chat_id=user_id, 
-            photo=foto_id, 
-            caption=mensaje_final,
+            photo=foto_id,
             write_timeout=60,
             read_timeout=60
         )
         
-        await query.edit_message_text("✅ ¡Listo! ☝️ Ahí tienes tu reporte armado. Dale a 'Reenviar' y mándalo al canal del cliente.")
+        # Mandar el texto separado para que puedas copiarlo y editarlo facilito
+        await context.bot.send_message(
+            chat_id=user_id,
+            text=mensaje_final
+        )
+        
+        await query.edit_message_text("✅ ¡Listo! ☝️ Ahí tienes tu texto limpio para copiar y editar.")
         
     except asyncio.TimeoutError:
         await query.edit_message_text("❌ La IA no respondió después de 3 intentos. Los servidores andan lentos, intenta de nuevo.")
@@ -132,6 +137,5 @@ if __name__ == '__main__':
     )
     app.add_handler(MessageHandler(filters.PHOTO, handle_photo))
     app.add_handler(CallbackQueryHandler(handle_button, pattern='^estatus_'))
-    print("Bot TECNI HOME en Render. ¡A trabajar!")
+    print("Bot TECNI HOME listo y volando. ¡A trabajar!")
     app.run_polling()
-  
